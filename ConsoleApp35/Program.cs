@@ -65,6 +65,21 @@ namespace ConsoleApp35
             using (ProductContext context = new ProductContext())
             {
                 context.Database.EnsureCreated();
+#orders
+    var result =
+    db.Orders
+      .Where(Product => Product.ProductID == id)
+      .SelectMany(Information => Order.OrdersID)
+      .ToList();
+
+#the maximum  
+    int maxOrder;
+    var result1 = 
+    db.Orders
+        .Where(Product => Product.ProductID == id)
+        .maxOrder= Information.Max
+        .ToList();
+
             }
         }
     }
